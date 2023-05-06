@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap"
+    rel="stylesheet">
+  <script type="text/JavaScript" src=" https://MomentJS.com/downloads/moment.js"></script>
+  <title>Age calculator app</title>
+  <link rel="stylesheet" href="index-f8bdc12d.css">
+</head>
+
+<body>
+
+  <main
+    class="md:mx-72 mx-10 dm:mx-36 my-40 h-[450px] sm:h-[550px] dm:w-[32rem] bg-white rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-[6rem] md:rounded-br-[13rem]">
+    <section class="dm:w-[32rem]">
+      <form action="#" class="flex items-start md:-space-x-20 ">
+        <div class="flex flex-col">
+          <label for="day" id="dayLabelBefore"
+            class="sm:mx-8 mx-3 text-[#716f6f] font-bold text-xs tracking-widest py-2 mt-10">DAY</label>
+          <input type="text" name="day" id="day" placeholder="DD"
+            class="bg-white font-extrabold text-lg border border-[#dbdbdb] rounded-md outline-[#854dff] sm:mx-8 mx-3 w-3/5 sm:w-1/3 py-4 px-4">
+          <label id="dayLabelAfter" class="sm:mx-8 mx-3 text-[#ff5757] font-medium text-[.65rem] italic py-2"></label>
+        </div>
+
+        <div class="flex flex-col">
+          <label for="month" id="monthLabelBefore"
+            class="sm:mx-8 mx-3 text-[#716f6f] font-bold text-xs tracking-widest py-2 mt-10">MONTH</label>
+          <input type="text" name="month" id="month" placeholder="MM"
+            class="bg-white font-extrabold text-lg border border-[#dbdbdb] rounded-md outline-[#854dff] sm:mx-8 mx-3 w-3/5 sm:w-1/3 py-4 px-4">
+          <label id="monthLabelAfter" class="sm:mx-8 mx-3 text-[#ff5757] font-medium text-[.65rem] italic py-2"></label>
+        </div>
+
+        <div class="flex flex-col">
+          <label for="year" id="yearLabelBefore"
+            class="sm:mx-8 mx-3 text-[#716f6f] font-bold text-xs tracking-widest py-2 mt-10">YEAR</label>
+          <input type="text" name="year" id="year" placeholder="YYYY"
+            class="bg-white font-extrabold text-lg border border-[#dbdbdb] rounded-md outline-[#854dff] sm:mx-8 mx-3 w-3/5 sm:w-2/5 py-4 px-4">
+          <label id="yearLabelAfter" class="sm:mx-8 mx-3 text-[#ff5757] font-medium text-[.65rem] italic py-2"></label>
+        </div>
+      </form>
+    </section>
+    <section class="md:my-4 my-8">
+      <div class="flex justify-between items-center mx-8">
+        <hr class="border border-[#dbdbdb] h-0 w-full text-center">
+        </hr>
+        <button type="submit" id="submit"><img src="icon-arrow-ca520b94.svg" alt=""
+            class="bg-[#854dff] active:bg-black rounded-full p-6 relative z-10 right-2/4 translate-x-2/4 md:right-0 md:translate-x-0"></button>
+      </div>
+
+      <div class="font-extrabold italic mx-8 ">
+        <h1 class="text-5xl sm:text-[5rem]"><span class="text-[#854dff] mr-2" id="years">--</span>years</h1>
+        <h1 class="text-5xl sm:text-[5rem]"><span class="text-[#854dff] mr-2" id="months">--</span>months</h1>
+        <h1 class="text-5xl sm:text-[5rem]"><span class="text-[#854dff] mr-2" id="days">--</span>days</h1>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
