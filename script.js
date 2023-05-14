@@ -22,9 +22,32 @@ const currDate = new Date().getDate()
 const daysInMonth = new Date(year.value, month.value, 0).getDate();
 
 submit.addEventListener("click", () => {
-    let a = moment([currYear, currMonth, currDate])
-    let b = moment([parseInt(year.value), parseInt(month.value), parseInt(day.value)])
-    let c = ((a.diff(b, 'years')))
+    let birthday = new Date(`${month.value}/${day.value}/${year.value}`);
+    let today = new Date();
+    let ageYears = today.getFullYear() - birthday.getFullYear();
+    let ageMonths = today.getMonth() - birthday.getMonth();
+    let ageDays = today.getDate() - birthday.getDate();
+
+    //claculation of age
+    if (isNaN(birthday.getTime())) {
+        // Invalid date
+        yearLabelAfter.innerHTML = "Must be a valid day";
+        hasError = true;
+    } else {
+        if (ageMonths < 0 || (ageMonths === 0 && ageDays < 0)) {
+            ageYears--;
+            ageMonths += 12;
+        }
+        if (ageDays < 0) {
+            let monthDays = new Date(
+                today.getFullYear(),
+                today.getMonth() - 1,
+                0
+            ).getDate();
+            ageDays += monthDays;
+            ageMonths--;
+        }
+    }
     let hasError = false
     //empty errors
     if (year.value === "") {
@@ -70,9 +93,8 @@ submit.addEventListener("click", () => {
 
     //no errors
     if (!hasError) {
-        days.innerHTML = parseInt((moment().subtract(c, 'days').format("D")))
-        months.innerHTML = parseInt((moment().subtract(c, 'months').format("M")))
-        years.innerHTML = parseInt((a.diff(b, 'years')))
+        years.innerHTML = ageYears;
+        months.innerHTML = ageMonths;
+        days.innerHTML = ageDays;
     }
-
 })
